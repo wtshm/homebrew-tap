@@ -10,9 +10,13 @@ class Nanoedit < Formula
 
   def install
     system "swift", "build", "-c", "release", "--disable-sandbox"
-    bin.install ".build/release/nanoedit"
-    bin.install ".build/release/Highlighter_Highlighter.bundle"
-    system "codesign", "--force", "--sign", "-", bin/"nanoedit"
+    libexec.install ".build/release/nanoedit"
+    libexec.install ".build/release/Highlighter_Highlighter.bundle"
+    system "codesign", "--force", "--sign", "-", libexec/"nanoedit"
+    (bin/"nanoedit").write <<~SH
+      #!/bin/bash
+      exec "#{libexec}/nanoedit" "$@"
+    SH
   end
 
   test do
