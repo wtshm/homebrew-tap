@@ -11,6 +11,7 @@ class Nanoedit < Formula
   def install
     system "swift", "build", "-c", "release", "--disable-sandbox"
     bin.install ".build/release/nanoedit"
+    system "codesign", "--force", "--sign", "-", bin/"nanoedit"
   end
 
   test do
