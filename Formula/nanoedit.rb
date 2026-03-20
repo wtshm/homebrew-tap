@@ -1,8 +1,8 @@
 class Nanoedit < Formula
   desc "Minimal floating text editor designed for use as an external editor"
   homepage "https://github.com/wtshm/nanoedit"
-  url "https://github.com/wtshm/nanoedit/archive/refs/tags/v0.0.1.tar.gz"
-  sha256 "f8b509c9c22dd9f5c64df8bcaeb7b8f2e9b54ab008d33bda00d599452a11dfbd"
+  url "https://github.com/wtshm/nanoedit/archive/refs/tags/v0.0.2.tar.gz"
+  sha256 "9ad98bf4411cc65d6c1a8162f7090bc36c39a9f50ccd2492373bd82570a6b75e"
   license "MIT"
 
   depends_on :macos
